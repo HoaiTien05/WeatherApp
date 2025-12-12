@@ -1,0 +1,23 @@
+{
+  "city": "Berlin",
+  "current": {
+    "dt": 1691212800,
+    "temp": 20,
+    "feels_like": 18,
+    "humidity": 46,
+    "wind_speed": 14,
+    "rain": 0,
+    "weather": [{ "icon": "01d" }]
+  },
+  "hourly": [
+    { "dt": 1691216400, "temp": 20, "weather": [{ "icon": "01d" }] },
+    { "dt": 1691220000, "temp": 21, "weather": [{ "icon": "01d" }] }
+  ],
+  "daily": [
+    {
+      "dt": 1691212800,
+      "temp": { "min": 17, "max": 25 },
+      "weather": [{ "icon": "10d" }]
+    }
+  ]
+}
