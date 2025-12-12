@@ -3,7 +3,7 @@ import sample from "../data/sampleResponse.json";
 const API_KEY = import.meta.env.VITE_WEATHER_API_KEY;
 const USE_FAKE = import.meta.env.VITE_USE_FAKE_DATA === "true";
 
-/** WeatherAPI có icon URL riêng */
+/** WeatherAPI has its own icon URL */
 export function mapIcon(code) {
   return `https:${code}`;
 }
@@ -27,7 +27,7 @@ export async function geocodeCity(city) {
   };
 }
 
-/** WeatherAPI fetch full data */
+/** WeatherAPI fetch data */
 export async function fetchWeather(lat, lon) {
   if (USE_FAKE) return sample;
 
@@ -38,7 +38,7 @@ export async function fetchWeather(lat, lon) {
 
   const data = await res.json();
 
-  // Convert to unified structure (like OpenWeatherMap version)
+  
   const normalized = {
     city: data.location.name,
     current: {

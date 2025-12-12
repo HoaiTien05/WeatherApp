@@ -1,4 +1,3 @@
-// App.js
 import { useState, useEffect } from "react";
 import Header from "./Header";
 import SearchBar from "./SearchBar";
@@ -14,7 +13,6 @@ export default function WeatherApp() {
     rain: "mm"
   });
 
-  // mặc định city để load khi mount
   const [city, setCity] = useState("Berlin");
   const [weather, setWeather] = useState(null);
   const [error, setError] = useState(null);
@@ -39,7 +37,6 @@ export default function WeatherApp() {
     }
   }
 
-  // load mặc định khi component mount -> hiển thị tất cả UI ngay
   useEffect(() => {
     load(city);
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -54,7 +51,7 @@ export default function WeatherApp() {
           How's the sky looking today?
         </h1>
 
-        {/* SearchBar: bạn có thể giữ onSearch = load để khi bấm tìm hoặc chọn sẽ cập nhật */}
+        {/* SearchBar: keep onSearch/onSelect = load to refresh results */}
         <SearchBar onSearch={load} onSelect={load} />
 
         {loading && <div className="mt-10 text-center text-gray-400">Loading...</div>}
@@ -72,7 +69,7 @@ export default function WeatherApp() {
           </div>
         )}
 
-        {/* Vì load() được gọi trên mount, weather sẽ có dữ liệu và các block dưới sẽ hiển thị */}
+        {/* Because load() is called on mount, weather will have data and the sections below will be displayed */}
         {weather && !loading && !error && (
           <div className="mt-12 grid grid-cols-1 lg:grid-cols-[1fr_380px] gap-8">
             <div className="space-y-6">
